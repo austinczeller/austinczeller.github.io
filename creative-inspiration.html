@@ -1,260 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creative Inspiration</title>
-  <meta name="description" content="Things that inspire my creative work" />
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .page-hero {
-      padding: 4rem 0 3rem;
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 4rem;
-    }
+---
+layout: default
+title: Creative Inspiration
+nav_active: creative
+description: Things that inspire my creative work — photography, art, and storytelling.
+page_css: /css/creative.css
+---
 
-    .page-hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(42px, 5vw, 64px);
-      font-weight: 600;
-      line-height: 1.05;
-      margin: 1rem 0 1.5rem;
-    }
+<div class="page-container">
+  <header class="page-hero">
+    <div class="label">Influences &amp; Inspiration</div>
+    <h1>Creative Inspiration</h1>
+    <p>Much of my inspiration is drawn from my understanding of the natural world. However, the work from other storytellers, artists, and designers inspire me to explore new ideas and approaches in my own creative projects. Simply, this is a collection of art I admire.</p>
+  </header>
 
-    .page-hero p {
-      font-size: 16px;
-      max-width: 560px;
-      line-height: 1.85;
-    }
+  <!-- PHOTOGRAPHY -->
+  <section class="photo-section">
+    <div class="section-header">
+      <h2>Photography</h2>
+    </div>
 
-    .section-header {
-      border-top: 1.5px solid var(--ink);
-      padding-top: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .section-header h2 {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-    }
-
-    /* --- Writing section --- */
-    .writing-section { margin-bottom: 5rem; }
-
-    .writing-item {
-      padding: 1.5rem 0;
-      border-bottom: 0.5px solid var(--rule);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: start;
-      gap: 2rem;
-    }
-
-    .writing-title {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      font-weight: 500;
-      line-height: 1.2;
-      color: var(--ink);
-      margin-bottom: 0.4rem;
-    }
-
-    .writing-excerpt {
-      font-size: 14px;
-      color: var(--ink-light);
-      line-height: 1.75;
-      max-width: 520px;
-      margin-bottom: 0.5rem;
-    }
-
-    .writing-meta {
-      font-size: 12px;
-      color: var(--ink-faint);
-    }
-
-    .writing-type {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      padding: 4px 10px;
-      border: 1px solid var(--rule);
-      white-space: nowrap;
-      align-self: start;
-    }
-
-    /* --- Photo section --- */
-    .photo-section { margin-bottom: 5rem; }
-
-    /* 
-      PHOTO GRID — two layouts available. 
-      Uncomment the one you prefer.
-    */
-
-    /* Option A: Masonry-style asymmetric grid (recommended) */
-    .photo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto;
-      gap: 4px;
-    }
-
-    .photo-grid .photo-item:nth-child(1) { grid-column: 1 / 3; }
-    .photo-grid .photo-item:nth-child(4) { grid-column: 2 / 4; }
-
-    .photo-item {
-      position: relative;
-      overflow: hidden;
-      background: var(--cream-dark);
-      aspect-ratio: 4/3;
-    }
-
-    .photo-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .photo-item:hover img { transform: scale(1.03); }
-
-    .photo-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1.5rem 1rem 0.8rem;
-      background: linear-gradient(transparent, rgba(28,26,21,0.7));
-      color: #F5F0E8;
-      font-size: 12px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .photo-item:hover .photo-caption { opacity: 1; }
-
-    /* Placeholder for when you don't have photos yet */
-    .photo-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: var(--ink-faint);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      height: 100%;
-      min-height: 200px;
-    }
-
-    /* --- Other creative note --- */
-    .creative-note {
-      padding: 2.5rem;
-      border: 1px solid var(--rule);
-      margin-bottom: 5rem;
-    }
-
-    .creative-note p {
-      font-family: var(--font-serif);
-      font-size: 20px;
-      font-style: italic;
-      line-height: 1.7;
-      color: var(--ink-mid);
-    }
-
-    @media (max-width: 768px) {
-      .photo-grid { grid-template-columns: 1fr 1fr; }
-      .photo-grid .photo-item:nth-child(1),
-      .photo-grid .photo-item:nth-child(4) { grid-column: auto; }
-      .writing-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="site-nav">
-    <a class="nav-logo" href="index.html">Austin C. Zeller</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="creative.html" class="active">Creative</a></li>
-      <li><a href="cv.html">CV</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <div class="page-container">
-      <header class="page-hero">
-        <div class="label">Writing &amp; Photography</div>
-        <h1>Creative Inspiration</h1>
-        <!-- EDIT: A line or two about your creative practice -->
-        <p>Much of my inspiration is drawn from my understandings of the natural world. 
-          However, the work from other storytellers, artists, and designers inspire me
-        to explore new ideas and approaches in my own creative projects. Simply, this is a collection
-      of art I admire.</p>
-      </header>
-
-      <!-- PHOTOGRAPHY -->
-      <section class="photo-section">
-        <div class="section-header">
-          <h2>Photography</h2>
-        </div>
-
-        <div class="photo-grid">
-          <!--
-            EDIT: Replace src="..." with paths to your images.
-            Put photos in an /images/ folder in your repo.
-            Example: src="images/photo-01.jpg"
-            
-            The first and fourth items span two columns for visual variety.
-            Delete .photo-placeholder divs and uncomment <img> tags when you have photos.
-          -->
-          <div class="photo-item">
-            <!-- <img src="images/photo-01.jpg" alt="Description of photo" /> -->
-            <!-- <div class="photo-caption">Caption text</div> -->
-            <div class="photo-placeholder">Photo 01</div>
-          </div>
-          <div class="photo-item">
-            <!-- <img src="images/photo-02.jpg" alt="Description" /> -->
-            <div class="photo-placeholder">Photo 02</div>
-          </div>
-          <div class="photo-item">
-            <!-- <img src="images/photo-03.jpg" alt="Description" /> -->
-            <div class="photo-placeholder">Photo 03</div>
-          </div>
-          <div class="photo-item">
-            <!-- <img src="images/photo-04.jpg" alt="Description" /> -->
-            <div class="photo-placeholder">Photo 04</div>
-          </div>
-          <div class="photo-item">
-            <!-- <img src="images/photo-05.jpg" alt="Description" /> -->
-            <div class="photo-placeholder">Photo 05</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- OPTIONAL: A short artist's note or quote -->
-      <div class="creative-note">
-        <p>
-          <!-- EDIT: A short reflection on your creative practice — what draws you to it, how it relates to your research, or anything else. Or remove this block entirely. -->
-          "An optional short note about your creative practice. A line from a poem, a sentence about why you photograph, or something about the relationship between your research and your creative work."
-        </p>
+    <div class="photo-grid">
+      <div class="photo-item">
+        <!-- <img src="images/inspo-01.jpg" alt="Description of photo" /> -->
+        <!-- <div class="photo-caption">Caption text</div> -->
+        <div class="photo-placeholder">Photo 01</div>
       </div>
-
+      <div class="photo-item">
+        <!-- <img src="images/inspo-02.jpg" alt="Description" /> -->
+        <div class="photo-placeholder">Photo 02</div>
+      </div>
+      <div class="photo-item">
+        <!-- <img src="images/inspo-03.jpg" alt="Description" /> -->
+        <div class="photo-placeholder">Photo 03</div>
+      </div>
+      <div class="photo-item">
+        <!-- <img src="images/inspo-04.jpg" alt="Description" /> -->
+        <div class="photo-placeholder">Photo 04</div>
+      </div>
+      <div class="photo-item">
+        <!-- <img src="images/inspo-05.jpg" alt="Description" /> -->
+        <div class="photo-placeholder">Photo 05</div>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">
-    <span class="footer-name">Austin C. Zeller</span>
-    <div class="footer-links">
-      <a href="https://github.com/austinczeller" target="_blank">GitHub</a>
-      <a href="#" target="_blank">Google Scholar</a>
-      <a href="mailto:your@email.com">Email</a>
-    </div>
-  </footer>
-
-</body>
-</html>
+</div>

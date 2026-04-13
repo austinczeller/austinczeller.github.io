@@ -1,0 +1,141 @@
+.page-hero {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 4rem;
+}
+
+.page-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 1rem 0 1.5rem;
+}
+
+.page-hero p {
+  font-size: 16px;
+  max-width: 560px;
+  line-height: 1.85;
+}
+
+/* --- Publications list --- */
+.pub-section { margin-bottom: 4rem; }
+
+.section-header {
+  border-top: 1.5px solid var(--ink);
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.section-header h2 {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+}
+
+.section-header span {
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 0.5px solid var(--rule);
+}
+
+.pub-year {
+  font-size: 13px;
+  color: var(--ink-faint);
+  padding-top: 4px;
+}
+
+.pub-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.pub-authors {
+  font-size: 13px;
+  color: var(--ink-light);
+  margin-bottom: 0.4rem;
+}
+
+.pub-authors strong { color: var(--ink); font-weight: 500; }
+
+.pub-venue {
+  font-size: 13px;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.pub-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.pub-link {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--rule);
+  padding: 3px 10px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.pub-link:hover { border-color: var(--accent); }
+
+/* --- Research interests --- */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  margin-bottom: 4rem;
+}
+
+.interest-card {
+  background: var(--cream);
+  padding: 2rem;
+}
+
+.interest-card h3 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.interest-card p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--ink-light);
+}
+
+/* --- Project description --- */
+.pub-description {
+  font-size: 13px;
+  color: var(--ink-faint);
+  line-height: 1.75;
+  margin-top: 0.4rem;
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+  .pub-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .pub-year { padding-top: 0; }
+}

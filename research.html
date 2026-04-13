@@ -1,279 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research — Austin C. Zeller</title>
-  <meta name="description" content="Academic research, publications, and projects by Austin C. Zeller." />
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .page-hero {
-      padding: 4rem 0 3rem;
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 4rem;
-    }
+---
+layout: default
+title: Research
+nav_active: research
+description: Academic research, publications, and projects by Austin C. Zeller.
+page_css: /css/research.css
+---
 
-    .page-hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(42px, 5vw, 64px);
-      font-weight: 600;
-      line-height: 1.05;
-      margin: 1rem 0 1.5rem;
-    }
+<div class="page-container">
+  <header class="page-hero">
+    <div class="label">Academic work</div>
+    <h1>Research</h1>
+    <p>I have an interest in using large datasets to understand patterns in ecology using Bayesian statistics.</p>
+  </header>
 
-    .page-hero p {
-      font-size: 16px;
-      max-width: 560px;
-      line-height: 1.85;
-    }
-
-    /* --- Publications list --- */
-    .pub-section { margin-bottom: 4rem; }
-
-    .section-header {
-      border-top: 1.5px solid var(--ink);
-      padding-top: 1rem;
-      margin-bottom: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .section-header h2 {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink-light);
-    }
-
-    .section-header span {
-      font-size: 12px;
-      color: var(--ink-faint);
-    }
-
-    .pub-item {
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      gap: 2rem;
-      padding: 1.5rem 0;
-      border-bottom: 0.5px solid var(--rule);
-    }
-
-    .pub-year {
-      font-size: 13px;
-      color: var(--ink-faint);
-      padding-top: 4px;
-    }
-
-    .pub-title {
-      font-family: var(--font-serif);
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 1.2;
-      color: var(--ink);
-      margin-bottom: 0.4rem;
-    }
-
-    .pub-authors {
-      font-size: 13px;
-      color: var(--ink-light);
-      margin-bottom: 0.4rem;
-    }
-
-    .pub-authors strong { color: var(--ink); font-weight: 500; }
-
-    .pub-venue {
-      font-size: 13px;
-      color: var(--ink-faint);
-      font-style: italic;
-    }
-
-    .pub-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 0.8rem;
-    }
-
-    .pub-link {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid var(--rule);
-      padding: 3px 10px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .pub-link:hover { border-color: var(--accent); }
-
-    /* --- Research interests --- */
-    .interests-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1px;
-      background: var(--rule);
-      margin-bottom: 4rem;
-    }
-
-    .interest-card {
-      background: var(--cream);
-      padding: 2rem;
-    }
-
-    .interest-card h3 {
-      font-family: var(--font-serif);
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 0.6rem;
-    }
-
-    .interest-card p {
-      font-size: 13px;
-      line-height: 1.75;
-      color: var(--ink-light);
-    }
-
-    @media (max-width: 768px) {
-      .pub-item { grid-template-columns: 1fr; gap: 0.5rem; }
-      .pub-year { padding-top: 0; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="site-nav">
-    <a class="nav-logo" href="index.html">Austin C. Zeller</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html" class="active">Research</a></li>
-      <li><a href="creative.html">Creative</a></li>
-      <li><a href="cv.html">CV</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <div class="page-container">
-      <header class="page-hero">
-        <div class="label">Academic work</div>
-        <h1>Research</h1>
-        <!-- EDIT: Your research description (1–2 sentences) -->
-        <p>I have an interest in using large datasets to understand patterns in ecology using
-          Bayesian statistics.</p>
-      </header>
-
-      <!-- RESEARCH INTERESTS -->
-      <section class="pub-section">
-        <div class="section-header">
-          <h2>Interests</h2>
-        </div>
-        <!-- EDIT: Replace with your actual research interests -->
-        <div class="interests-grid">
-                <div class="interest-card">
-            <h3>Species Habitat Use</h3>
-            <p>Understanding how different species utilize their 
-              habitats and the factors that influence distributions are fundemental questions
-            in ecology and have heightened importance during the anthropocene. </p>
-          </div>
-          <div class="interest-card">
-            <h3>Quantitative Ecology</h3>
-            <p>I have a strong interest in applying quantitative methods to address ecological questions and develop evidence-based management strategies.</p>
-          </div>
-          <div class="interest-card">
-            <h3>Land Management</h3>
-            <p>In a finite world, sustainable land management practices are essential for preserving biodiversity and ecosystem services.</p>
-          </div>
-          <div class="interest-card">
-            <h3>Indigenous Stewardship</h3>
-            <p>Reconceptualizing conservation through the lens of Indigenous knowledge systems
-               and traditional ecological practices is essential for reconciliation and
-               sustainable management.</p>
-          </div>
-    
-        </div>
-      </section>
-
-      <!-- PUBLICATIONS -->
-      <section class="pub-section">
-        <div class="section-header">
-          <h2>Publications</h2>
-          <span>Peer-reviewed</span>
-        </div>
-
-        <!-- EDIT: Add your publications. Duplicate the .pub-item block for each one. -->
-        <div class="pub-item">
-          <div class="pub-year">2024</div>
-          <div>
-            <div class="pub-title">An ecological perspective on the temporal variation in Pileated
-Woodpecker (<i>Dryocopus pileatus</i>) drumming behavior in Alberta,
-Canada</div>
-            <div class="pub-authors"><strong>A. C. Zeller</strong>, Bayne, E.M., Mahon, C.L.</div>
-            <div class="pub-venue">Avian Conservation and Ecology</div>
-            <div class="pub-links">
-              <a class="pub-link" href="pdf/Zeller et al 2024.pdf" target="_blank">PDF</a>
-              <a class="pub-link" href="https://doi.org/10.5751/ACE-02724-190211" target="_blank">DOI</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-year">2023</div>
-          <div>
-            <div class="pub-title">Another Paper Title Goes Here</div>
-            <div class="pub-authors">Co-author Name, <strong>A. Czeller</strong>, Another Name</div>
-            <div class="pub-venue">Conference on Something, Proceedings</div>
-            <div class="pub-links">
-              <a class="pub-link" href="#" target="_blank">PDF</a>
-              <a class="pub-link" href="#" target="_blank">Slides</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ONGOING PROJECTS -->
-      <section class="pub-section">
-        <div class="section-header">
-          <h2>Current projects</h2>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-year">Now</div>
-          <div>
-            <div class="pub-title">Cumulative effects influence northern boreal breeding bird
-               abundances in a mining impacted landscape </div>
-            <div class="pub-authors">With M. Brown, D. Yip, E.M. Bayne, A.McCulley, M. Hornseth, C.L. Mahon, C. Mantyka-Pringle</div>
-            <div class="pub-venue">We are evaluating the various effects mining, particularly placer mining,
-              has on various speices of birds in central Yukon, Canada. In doing so we have determined indvidual relationships
-            between species and features on the landscape, as well as identifying critical thresholds of 
-            disturbance in which species are most affected by disturbance. Furthermore, we idenitfy
-             habitat types that are more vulnerable/resilient to disturbance.</div>
-          </div>
-          <div class="pub-item">
-          <div class="pub-year">Now</div>
-          <div>
-            <div class="pub-title">Improving habitat models for Pileated Woodpeckers: The roles
-              of occupancy, intensity of use, land cover, and scale </div>
-            <div class="pub-authors">With A. De Rosa, L. Leston, C.L. Mahon, E.M. Bayne</div>
-            <div class="pub-venue">We are determining the best models for predicting Pileated Woodpecker
-              habitat use in Alberta, Canada. In doing so we compare how occupancy and intensity of use
-              models can accurately predict habitat use, and how the inclusion of various land cover data
-               and scale can improve model performance.</div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <!-- RESEARCH INTERESTS -->
+  <section class="pub-section">
+    <div class="section-header">
+      <h2>Interests</h2>
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <span class="footer-name">Austin C. Zeller</span>
-    <div class="footer-links">
-      <a href="https://github.com/austinczeller" target="_blank">GitHub</a>
-      <a href="#" target="_blank">Google Scholar</a>
-      <a href="mailto:your@email.com">Email</a>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <h3>Species Habitat Use</h3>
+        <p>Understanding how different species utilize their habitats and the factors that influence distributions are fundamental questions in ecology and have heightened importance during the Anthropocene.</p>
+      </div>
+      <div class="interest-card">
+        <h3>Quantitative Ecology</h3>
+        <p>I have a strong interest in applying quantitative methods to address ecological questions and develop evidence-based management strategies.</p>
+      </div>
+      <div class="interest-card">
+        <h3>Land Management</h3>
+        <p>In a finite world, sustainable land management practices are essential for preserving biodiversity and ecosystem services.</p>
+      </div>
+      <div class="interest-card">
+        <h3>Indigenous Stewardship</h3>
+        <p>Reconceptualizing conservation through the lens of Indigenous knowledge systems and traditional ecological practices is essential for reconciliation and sustainable management.</p>
+      </div>
     </div>
-  </footer>
+  </section>
 
-</body>
-</html>
+  <!-- PUBLICATIONS -->
+  <section class="pub-section">
+    <div class="section-header">
+      <h2>Publications</h2>
+      <span>Peer-reviewed</span>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">2024</div>
+      <div>
+        <div class="pub-title">An ecological perspective on the temporal variation in Pileated Woodpecker (<i>Dryocopus pileatus</i>) drumming behavior in Alberta, Canada</div>
+        <div class="pub-authors"><strong>A. C. Zeller</strong>, E. M. Bayne, C. L. Mahon</div>
+        <div class="pub-venue">Avian Conservation and Ecology, 19(2):11</div>
+        <div class="pub-links">
+          <a class="pub-link" href="pdf/Zeller et al 2024.pdf" target="_blank">PDF</a>
+          <a class="pub-link" href="https://doi.org/10.5751/ACE-02724-190211" target="_blank">DOI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONGOING PROJECTS -->
+  <section class="pub-section">
+    <div class="section-header">
+      <h2>Current projects</h2>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">Now</div>
+      <div>
+        <div class="pub-title">Cumulative effects influence northern boreal breeding bird abundances in a mining impacted landscape</div>
+        <div class="pub-authors">With M. Brown, D. Yip, E. M. Bayne, A. McCulley, M. Hornseth, C. L. Mahon, C. Mantyka-Pringle</div>
+        <p class="pub-description">We are evaluating the various effects mining, particularly placer mining, has on various species of birds in central Yukon, Canada. In doing so we have determined individual relationships between species and features on the landscape, as well as identifying critical thresholds of disturbance in which species are most affected. Furthermore, we identify habitat types that are more vulnerable or resilient to disturbance.</p>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-year">Now</div>
+      <div>
+        <div class="pub-title">Improving habitat models for Pileated Woodpeckers: The roles of occupancy, intensity of use, land cover, and scale</div>
+        <div class="pub-authors">With A. De Rosa, L. Leston, C. L. Mahon, E. M. Bayne</div>
+        <p class="pub-description">We are determining the best models for predicting Pileated Woodpecker habitat use in Alberta, Canada. In doing so we compare how occupancy and intensity of use models can accurately predict habitat use, and how the inclusion of various land cover data and scale can improve model performance.</p>
+      </div>
+    </div>
+  </section>
+</div>

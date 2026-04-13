@@ -1,0 +1,9 @@
+<nav class="site-nav">
+  <a class="nav-logo" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+  <ul class="nav-links">
+    <li><a href="{{ '/' | relative_url }}"{% if page.nav_active == 'home' %} class="active"{% endif %}>Home</a></li>
+    <li><a href="{{ '/research.html' | relative_url }}"{% if page.nav_active == 'research' %} class="active"{% endif %}>Research</a></li>
+    <li><a href="{{ '/creative.html' | relative_url }}"{% if page.nav_active == 'creative' %} class="active"{% endif %}>Creative</a></li>
+    <li><a href="{{ '/cv.html' | relative_url }}"{% if page.nav_active == 'cv' %} class="active"{% endif %}>CV</a></li>
+  </ul>
+</nav>

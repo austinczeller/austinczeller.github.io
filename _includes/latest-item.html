@@ -1,0 +1,18 @@
+{% assign work = include.work %}
+{% assign href = work.doi | default: work.link %}
+
+{% if href %}<a class="latest-item" href="{{ href }}"{% if work.doi %} target="_blank"{% endif %}>
+{% else %}<div class="latest-item">{% endif %}
+
+  <div class="latest-item-type">{% if work.type == "research" %}Research{% else %}{{ work.subtype }}{% endif %}</div>
+  <div class="latest-item-title">{{ work.title }}</div>
+  <div class="latest-item-sub">
+    {% if work.type == "research" %}
+      {{ work.authors }}{% if work.venue %}. <em>{{ work.venue }}</em>{% endif %}
+    {% else %}
+      {{ work.meta }}
+    {% endif %}
+  </div>
+
+{% if href %}</a>
+{% else %}</div>{% endif %}

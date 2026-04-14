@@ -3,6 +3,10 @@ layout: default
 nav_active: home
 description: Wildlife biologist, quantitative ecologist, and creative based in Whitehorse, Yukon.
 page_css: /css/home.css
+featured:
+  - piwo-drumming-2024
+  - korlornium
+  - earthtones
 ---
 
 <section class="hero">
@@ -23,23 +27,10 @@ page_css: /css/home.css
   <div class="hero-right">
     <p class="latest-label">Latest</p>
 
-    <div class="latest-item">
-      <div class="latest-item-type">Research</div>
-      <div class="latest-item-title">An ecological perspective on the temporal variation in Pileated Woodpecker (<i>Dryocopus pileatus</i>) drumming behavior in Alberta, Canada</div>
-      <div class="latest-item-sub"><b>Zeller, A. C.,</b> E. M. Bayne, and C. L. Mahon. 2024. <i>Avian Conservation and Ecology</i>, 19(2):11.</div>
-    </div>
-
-    <div class="latest-item">
-      <div class="latest-item-type">Writing</div>
-      <div class="latest-item-title">Korlornium</div>
-      <div class="latest-item-sub">A worldbuilding project for TTRPGs</div>
-    </div>
-
-    <div class="latest-item">
-      <div class="latest-item-type">Radio</div>
-      <div class="latest-item-title">E A R T H T O N E S</div>
-      <div class="latest-item-sub">CJUC 92.5 FM · Whitehorse, Yukon</div>
-    </div>
+    {% for work_id in page.featured %}
+      {% assign work = site.data.works | where: "id", work_id | first %}
+      {% include latest-item.html work=work %}
+    {% endfor %}
   </div>
 </section>
 
@@ -56,7 +47,7 @@ page_css: /css/home.css
     <p>Publications, projects, and ongoing work.</p>
     <span class="card-link">View research →</span>
   </a>
-  <a class="split-card split-card--dark" href="creative.html">
+  <a class="split-card split-card--terracotta" href="creative.html">
     <span class="label">Creative</span>
     <h2>Creative Projects</h2>
     <p>Writing, game design, film and photography.</p>

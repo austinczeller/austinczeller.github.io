@@ -1,0 +1,9 @@
+{% assign work = include.work %}
+<div class="writing-item">
+  <div>
+    <div class="writing-title">{{ work.title }}</div>
+    <p class="writing-excerpt">{{ work.description }}</p>
+    <div class="writing-meta">{{ work.meta }}</div>
+  </div>
+  <span class="writing-type">{{ work.subtype }}</span>
+</div>

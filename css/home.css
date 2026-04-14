@@ -62,6 +62,14 @@
 .latest-item {
   padding: 1.2rem 0;
   border-bottom: 0.5px solid var(--rule);
+  display: block;
+  transition: background 0.15s;
+}
+
+a.latest-item:hover {
+  background: var(--cream-dark);
+  padding-left: 0.5rem;
+  margin-left: -0.5rem;
 }
 
 .latest-item-type {
@@ -103,13 +111,19 @@
   min-height: 220px;
 }
 
-.split-card--light { background: var(--cream-dark); }
-.split-card--dark  { background: var(--ink); }
+.split-card--light      { background: var(--cream-dark); }
+.split-card--dark       { background: var(--ink); }
+.split-card--terracotta { background: #D4A882; }
 
-.split-card--dark .label    { color: var(--accent-warm); }
-.split-card--dark h2        { color: var(--cream); }
-.split-card--dark p         { color: #A89E8E; }
-.split-card--dark .card-link { color: var(--accent-warm); }
+.split-card--dark .label         { color: var(--accent-warm); }
+.split-card--dark h2             { color: var(--cream); }
+.split-card--dark p              { color: #A89E8E; }
+.split-card--dark .card-link     { color: var(--accent-warm); }
+
+.split-card--terracotta .label     { color: var(--ink-mid); }
+.split-card--terracotta h2         { color: var(--ink); }
+.split-card--terracotta p          { color: var(--ink-mid); }
+.split-card--terracotta .card-link { color: var(--ink); }
 
 .split-card h2 {
   font-family: var(--font-serif);

@@ -19,41 +19,10 @@ page_css: /css/creative.css
       <h2>Projects</h2>
     </div>
 
-    <div class="writing-item">
-      <div>
-        <div class="writing-title">Korlornium</div>
-        <p class="writing-excerpt">Korlornium is a fantasy world I created for TTRPGs. Inspired by short stories written by myself and friends during high school.</p>
-        <div class="writing-meta">Obsidian Vault · 2012–Present</div>
-      </div>
-      <span class="writing-type">Fantasy World</span>
-    </div>
-
-    <div class="writing-item">
-      <div>
-        <div class="writing-title">E A R T H T O N E S</div>
-        <p class="writing-excerpt">A weekly radio show hosted on the community radio station CJUC 92.5 FM in Whitehorse, Yukon. Featuring a mix of music that represents the seasonal changes of the north.</p>
-        <div class="writing-meta">CJUC 92.5 FM · 2022–Present</div>
-      </div>
-      <span class="writing-type">Radio Show</span>
-    </div>
-
-    <div class="writing-item">
-      <div>
-        <div class="writing-title">Wize Men Radio</div>
-        <p class="writing-excerpt">A weekly radio show hosted on the community radio station CiTR 101.9 FM in Vancouver, BC. Exploring topics in environmental science, policy, and ambient music.</p>
-        <div class="writing-meta">CiTR 101.9 FM · 2015–2017</div>
-      </div>
-      <span class="writing-type">Radio Show</span>
-    </div>
-
-    <div class="writing-item">
-      <div>
-        <div class="writing-title">Dan and Austin Make a Snollermovie in Whistler Blackcomb: The Great White North</div>
-        <p class="writing-excerpt">A satirical film about two of the best skiers on the mountain.</p>
-        <div class="writing-meta">YouTube · 2014</div>
-      </div>
-      <span class="writing-type">Short Film</span>
-    </div>
+    {% assign creative_works = site.data.works | where: "type", "creative" %}
+    {% for work in creative_works %}
+      {% include writing-item.html work=work %}
+    {% endfor %}
   </section>
 
   <!-- PHOTOGRAPHY -->

@@ -45,18 +45,10 @@ page_css: /css/research.css
       <span>Peer-reviewed</span>
     </div>
 
-    <div class="pub-item">
-      <div class="pub-year">2024</div>
-      <div>
-        <div class="pub-title">An ecological perspective on the temporal variation in Pileated Woodpecker (<i>Dryocopus pileatus</i>) drumming behavior in Alberta, Canada</div>
-        <div class="pub-authors"><strong>A. C. Zeller</strong>, E. M. Bayne, C. L. Mahon</div>
-        <div class="pub-venue">Avian Conservation and Ecology, 19(2):11</div>
-        <div class="pub-links">
-          <a class="pub-link" href="pdf/Zeller et al 2024.pdf" target="_blank">PDF</a>
-          <a class="pub-link" href="https://doi.org/10.5751/ACE-02724-190211" target="_blank">DOI</a>
-        </div>
-      </div>
-    </div>
+    {% assign published = site.data.works | where: "type", "research" | where: "status", "published" %}
+    {% for work in published %}
+      {% include pub-item.html work=work %}
+    {% endfor %}
   </section>
 
   <!-- ONGOING PROJECTS -->
@@ -65,22 +57,9 @@ page_css: /css/research.css
       <h2>Current projects</h2>
     </div>
 
-    <div class="pub-item">
-      <div class="pub-year">Now</div>
-      <div>
-        <div class="pub-title">Cumulative effects influence northern boreal breeding bird abundances in a mining impacted landscape</div>
-        <div class="pub-authors">With M. Brown, D. Yip, E. M. Bayne, A. McCulley, M. Hornseth, C. L. Mahon, C. Mantyka-Pringle</div>
-        <p class="pub-description">We are evaluating the various effects mining, particularly placer mining, has on various species of birds in central Yukon, Canada. In doing so we have determined individual relationships between species and features on the landscape, as well as identifying critical thresholds of disturbance in which species are most affected. Furthermore, we identify habitat types that are more vulnerable or resilient to disturbance.</p>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-year">Now</div>
-      <div>
-        <div class="pub-title">Improving habitat models for Pileated Woodpeckers: The roles of occupancy, intensity of use, land cover, and scale</div>
-        <div class="pub-authors">With A. De Rosa, L. Leston, C. L. Mahon, E. M. Bayne</div>
-        <p class="pub-description">We are determining the best models for predicting Pileated Woodpecker habitat use in Alberta, Canada. In doing so we compare how occupancy and intensity of use models can accurately predict habitat use, and how the inclusion of various land cover data and scale can improve model performance.</p>
-      </div>
-    </div>
+    {% assign current = site.data.works | where: "type", "research" | where: "status", "current" %}
+    {% for work in current %}
+      {% include pub-item.html work=work %}
+    {% endfor %}
   </section>
 </div>

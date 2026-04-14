@@ -1,0 +1,16 @@
+{% assign work = include.work %}
+<div class="pub-item">
+  <div class="pub-year">{{ work.year | default: "Now" }}</div>
+  <div>
+    <div class="pub-title">{{ work.title }}</div>
+    <div class="pub-authors">{{ work.authors }}</div>
+    {% if work.venue %}<div class="pub-venue">{{ work.venue }}</div>{% endif %}
+    {% if work.description %}<p class="pub-description">{{ work.description }}</p>{% endif %}
+    {% if work.doi or work.pdf %}
+    <div class="pub-links">
+      {% if work.pdf %}<a class="pub-link" href="{{ work.pdf }}" target="_blank">PDF</a>{% endif %}
+      {% if work.doi %}<a class="pub-link" href="{{ work.doi }}" target="_blank">DOI</a>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+</div>

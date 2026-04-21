@@ -5,5 +5,9 @@
     <p class="writing-excerpt">{{ work.description }}</p>
     <div class="writing-meta">{{ work.meta }}</div>
   </div>
-  <span class="writing-type">{{ work.subtype }}</span>
+  {% if work.link %}
+    <a class="writing-type" href="{{ work.link }}" target="_blank">{{ work.subtype }}</a>
+  {% else %}
+    <span class="writing-type">{{ work.subtype }}</span>
+  {% endif %}
 </div>

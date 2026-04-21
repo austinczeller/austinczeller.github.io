@@ -10,8 +10,16 @@ page_css: /css/creative.css
   <header class="page-hero">
     <div class="label">Writing &amp; Photography</div>
     <h1>Creative</h1>
-    <p>My creative interests include creating functional, living worlds through writing and game design for tabletop role-playing games. I love storytelling and capturing atmospheric moments via photography and film.</p>
+    <p>From backyard films to fantasy worlds — a lifelong practice of making things.</p>
   </header>
+
+  <div class="about-body">
+    <p>From around the age of ten, I was making videos with friends. Short comedic skits and ambitious "action films" shot on my parents' VHS recorder. As the internet opened up we started posting those videos on sites like StupidVideos.com and eventually YouTube. I kept at it through high school, picking up editing and production skills as I went, and eventually built up a small archive of work on my YouTube channel TheSpaceRaptor.</p>
+
+    <p>When I left for university at the University of British Columbia, I had every intention of studying Film Production. However, after taking a few courses in the Faculty of Forestry I ended up finding myself at a crossroads in my interests. I decided to further pursue my interest in biology and the natural world, eventually getting my degree in Conservation. Throughout this journey I still stuck with photography. I kept shooting on film, gravitating toward natural and abstract subjects, building on the darkroom work and media classes I had genuinely loved in high school.</p>
+
+    <p>Woven through all of this has been a love of story and world-building. Growing up, a group of friends and I wrote short stories set in a shared fantasy world we called Korlornium. Each story added something to the lore, and the world grew in ways none of us planned. I never really stopped working on it. Today Korlornium is a fully modernized setting at the heart of my Dungeons and Dragons campaign, still growing with every session.</p>
+  </div>
 
   <!-- PROJECTS -->
   <section class="writing-section">
@@ -19,7 +27,7 @@ page_css: /css/creative.css
       <h2>Projects</h2>
     </div>
 
-    {% assign creative_works = site.data.works | where: "type", "creative" %}
+    {% assign creative_works = site.data.works | where: "type", "creative" | where_exp: "work", "work.era != 'archive'" %}
     {% for work in creative_works %}
       {% include writing-item.html work=work %}
     {% endfor %}
@@ -54,6 +62,19 @@ page_css: /css/creative.css
         <div class="photo-placeholder">Photo 05</div>
       </div>
     </div>
+  </section>
+
+  <!-- THE VAULT -->
+  <section class="writing-section">
+    <div class="section-header">
+      <h2>The Vault</h2>
+      <span>Earlier videos · circa 2012</span>
+    </div>
+
+    {% assign archive_works = site.data.works | where: "type", "creative" | where: "era", "archive" %}
+    {% for work in archive_works %}
+      {% include writing-item.html work=work %}
+    {% endfor %}
   </section>
 
   <!-- INSPIRATION -->

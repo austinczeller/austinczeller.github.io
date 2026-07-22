@@ -2,7 +2,8 @@
 <div class="pub-item">
   <div class="pub-year">{{ work.year | default: "Now" }}</div>
   <div>
-    <div class="pub-title">{{ work.title }}</div>
+    {% assign article = work.doi | default: work.pdf %}
+    <div class="pub-title">{% if article %}<a href="{{ article }}" target="_blank" rel="noopener">{{ work.title }}</a>{% else %}{{ work.title }}{% endif %}</div>
     <div class="pub-authors">{{ work.authors }}</div>
     {% if work.venue %}<div class="pub-venue">{{ work.venue }}</div>{% endif %}
     {% if work.description %}<p class="pub-description">{{ work.description }}</p>{% endif %}

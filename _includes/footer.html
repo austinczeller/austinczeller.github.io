@@ -1,9 +1,10 @@
 <footer class="site-footer">
   <span class="footer-name">{{ site.author.name }}</span>
   <div class="footer-links">
-    <a href="{{ site.author.github }}" target="_blank">GitHub</a>
-    <a href="{{ site.author.scholar }}" target="_blank">Google Scholar</a>
-    <a href="mailto:{{ site.author.email }}">Email</a>
-    <a href="{{ site.author.linkedin }}" target="_blank">LinkedIn</a>
+    {% if site.author.scholar %}<a href="{{ site.author.scholar }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+    {% if site.author.researchgate %}<a href="{{ site.author.researchgate }}" target="_blank" rel="noopener">ResearchGate</a>{% endif %}
+    {% if site.author.linkedin %}<a href="{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+    {% if site.author.github %}<a href="{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+    {% if site.author.email %}<a href="mailto:{{ site.author.email }}">Email</a>{% endif %}
   </div>
 </footer>

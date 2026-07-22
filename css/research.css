@@ -67,6 +67,16 @@
   margin-bottom: 0.4rem;
 }
 
+.pub-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.pub-title a:hover {
+  color: var(--accent);
+}
+
 .pub-authors {
   font-size: 13px;
   color: var(--ink-light);

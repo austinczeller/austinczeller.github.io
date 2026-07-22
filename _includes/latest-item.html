@@ -1,7 +1,8 @@
 {% assign work = include.work %}
 {% assign href = work.doi | default: work.link %}
+{% assign external = false %}{% if href contains '://' %}{% assign external = true %}{% endif %}
 
-{% if href %}<a class="latest-item" href="{{ href }}"{% if work.doi %} target="_blank"{% endif %}>
+{% if href %}<a class="latest-item" href="{{ href }}"{% if external %} target="_blank" rel="noopener"{% endif %}>
 {% else %}<div class="latest-item">{% endif %}
 
   <div class="latest-item-type">{% if work.type == "research" %}Research{% else %}{{ work.subtype }}{% endif %}</div>
